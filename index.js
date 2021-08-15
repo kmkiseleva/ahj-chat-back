@@ -16,7 +16,7 @@ app.use(koaBody({ urlencoded: true, multipart: true, json: true }));
 
 router.post("/newuser", async (ctx) => {
   if (Object.keys(ctx.request.body).length === 0) {
-    ctx.response.body = "Нет данных";
+    ctx.response.body = "No data";
   }
   const { name } = JSON.parse(ctx.request.body);
   const isExist = userState.find((user) => user.name === name);
